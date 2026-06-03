@@ -1,0 +1,126 @@
+AIRLINE MANAGEMENT SYSTEM 
+Design Report 
+1. Introduction 
+The Airline Management System is a console-based application developed in C++ using 
+Object-Oriented Programming (OOP) concepts. The purpose of this system is to manage 
+airline operations such as flight management, passenger registration, ticket booking, ticket 
+cancellation, report generation, and data storage. 
+The system provides an easy way to handle airline records and demonstrates important 
+programming concepts including inheritance, polymorphism, abstraction, exception handling, 
+templates, operator overloading, file handling, and STL vectors. 
+ 
+2. Objectives 
+The main objectives of this project are: 
+ To manage flight information. 
+ To register and manage passengers. 
+ To book and cancel tickets. 
+ To generate occupancy and revenue reports. 
+ To save and load data from files. 
+ To implement Object-Oriented Programming concepts in a real-world application. 
+ 
+3. System Design 
+The system consists of the following major classes: 
+Flight (Abstract Base Class) 
+The Flight class stores common flight information such as: 
+ Flight Number 
+ Origin 
+ Destination 
+ Departure Date 
+ Total Seats 
+ Available Seats 
+It contains pure virtual functions: 
+ calculateFare() 
+ showDetails() 
+ getType() 
+These functions are implemented by derived classes. 
+ 
+Derived Flight Classes 
+DomesticFlight 
+Represents flights operating within the country. 
+InternationalFlight 
+Represents flights traveling to other countries. An additional 18% tax is added to the fare. 
+CharterFlight 
+Represents private charter flights where the total charter cost is divided among passengers. 
+ 
+Passenger (Abstract Base Class) 
+Stores passenger information: 
+ Passenger ID 
+ Name 
+ Phone Number 
+ Loyalty Points 
+Pure virtual functions: 
+ getBaggage() 
+ getRefundPercent() 
+ getClass() 
+ 
+Derived Passenger Classes 
+EconomyPassenger 
+ Baggage Allowance: 20 kg 
+ Refund: 50% 
+BusinessPassenger 
+ Baggage Allowance: 35 kg 
+ Refund: 75% 
+FirstClassPassenger 
+ Baggage Allowance: 50 kg 
+ Refund: 90% 
+ 
+Ticket Class 
+Stores booking information: 
+ Ticket ID 
+ Passenger ID 
+ Flight Number 
+ Seat Number 
+ Fare Paid 
+ Booking Status 
+The class supports ticket creation and cancellation tracking. 
+ 
+Airline Class 
+This is the main controller class of the system. 
+Responsibilities: 
+ Manage flights 
+ Manage passengers 
+ Book tickets 
+ Cancel tickets 
+ Generate reports 
+ Save and load data 
+ 
+4. OOP Concepts Used 
+Encapsulation 
+Data members are kept private or protected and accessed through member functions. 
+Inheritance 
+Derived classes inherit properties and behavior from base classes. 
+Polymorphism 
+Virtual functions allow different classes to implement their own behavior. 
+Abstraction 
+Abstract classes hide implementation details and provide a common interface. 
+Operator Overloading 
+The << operator is overloaded to display flight, passenger, and ticket information. 
+Templates 
+A generic search function is used to search passengers by ID. 
+Exception Handling 
+Custom exceptions are used for: 
+ Flight Full Error 
+ Invalid Ticket Cancellation 
+ 
+5. File Handling 
+The system saves all information in a text file named: 
+airline_data.txt 
+The file stores: 
+ Flight records 
+ Passenger records 
+ Ticket records 
+ System counters 
+This allows data to remain available even after the program closes. 
+ 
+6. Reports Generated 
+The system generates the following reports: 
+Occupancy Report 
+Shows the percentage of seats occupied in each flight. 
+Revenue Report 
+Shows flights generating the highest revenue based on active bookings. 
+ 
+7. Conclusion 
+The Airline Management System successfully demonstrates the practical implementation of 
+Object-Oriented Programming concepts in C++. The project provides efficient management 
+of flights, passengers, and bookings while supporting file storage and report generation. The 
+system is user-friendly, modular, and can be further expanded with graphical interfaces and database integration in the future.
